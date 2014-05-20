@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="ffm.phonegap.PushNotificationPlugin"
+    version="1.0.0">
+    <name>wpPush</name>
+    <description>wpPush</description>
+    <license>MIT</license>
+
+    <js-module src="www/PushNotification.js" name="PushNotification">
+         <clobbers target="PushNotification" />
+    </js-module>
+
+    <!-- Windows Phone 8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PushNotificationPlugin">
+                <param name="wp-package" value="PushNotificationPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+            <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+        </config-file>
+
+        <source-file src="src/PushNotificationPlugin.cs" />
+    </platform>
+</plugin>
