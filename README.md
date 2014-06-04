@@ -4,8 +4,7 @@ wpPush
 Push para wp
 
 
-Just a Try
-
+Just a Test
 solo una prueba
 
 do not use
